@@ -1,12 +1,16 @@
 import React from 'react';
+
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { History, GraduationCap, Award, Stars, CheckCircle } from 'lucide-react';
+import instructorImage from '../../assets/Instructor_img.png';
 
 export const Instructor = () => {
+
   return (
-    <section className="relative py-32 px-6 bg-[#050208] flex justify-center overflow-hidden">
+    <section className="relative py-32 px-6 bg-obsidian flex justify-center overflow-hidden">
       {/* Background radial glow - very subtle */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-purple-900/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl w-full relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:items-start">
@@ -16,15 +20,15 @@ export const Instructor = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full max-w-[400px] shrink-0"
+            className="w-full max-w-100 shrink-0"
           >
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-gold-main/20 bg-black shadow-2xl group">
+            <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-gold-main/20 bg-black shadow-2xl group">
               <img 
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" 
+                src={instructorImage} 
                 alt="Instructor" 
                 className="w-full h-full object-cover grayscale sepia-[0.2] transition-all duration-700 group-hover:grayscale-0 group-hover:sepia-0 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
               
               <div className="absolute bottom-6 left-6">
                 <p className="text-[10px] font-black tracking-[0.4em] text-gold-main uppercase mb-1">Lead Educator</p>
@@ -122,7 +126,7 @@ export const Instructor = () => {
 
 const InstructorStat = ({ icon, title, label }) => (
   <div className="flex gap-4 items-start group">
-    <div className="p-3 bg-white/[0.03] border border-white/10 rounded-xl text-gold-main group-hover:bg-gold-main group-hover:text-black transition-all duration-300">
+    <div className="p-3 bg-white/3 border border-white/10 rounded-xl text-gold-main group-hover:bg-gold-main group-hover:text-black transition-all duration-300">
       {icon}
     </div>
     <div>

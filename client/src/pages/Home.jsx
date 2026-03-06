@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/homepage/hero'
+import Hero from '../components/homepage/Hero'
 import { Curriculum } from '../components/homepage/Curriculum'
 import { Courses } from '../components/homepage/Courses'
 import { Instructor } from '../components/homepage/Instructor'
