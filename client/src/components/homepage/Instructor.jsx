@@ -1,6 +1,5 @@
 import React from 'react';
 
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { History, GraduationCap, Award, Stars, CheckCircle } from 'lucide-react';
 import instructorImage from '../../assets/Instructor_img.png';
