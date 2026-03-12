@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight, BookOpen, Star, Globe, Clock, GraduationCap, CheckCircle } from 'lucide-react';
-
+import { motion } from 'framer-motion';
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
@@ -31,18 +31,27 @@ const Hero = () => {
       </div>
 
       {/* 2. MAIN HEADLINE */}
-      <h1 className="font-['Cinzel'] text-5xl md:text-8xl font-black mb-6 leading-tight shimmer-gold px-4">
+      <h1 className="font-['Cinzel'] text-5xl sm:text-6xl md:text-7xl font-black mb-6 leading-tight shimmer-gold px-4">
         Unlock the <br /> 
         <span className="italic font-light text-white">Mysteries</span> of Tarot
       </h1>
       
-      <p className="font-['Cormorant_Garamond'] text-xl md:text-2xl text-white/60 max-w-2xl mb-12 italic">
-        Step into Oracle Horizon’s inner circle. From symbolic geometry to 
-        advanced archetypal intuition, master the art of the soul.
-      </p>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-lg md:text-xl font-['Cormorant_Garamond'] italic text-gold-main/80 mb-12 max-w-2xl text-center leading-relaxed"
+      >
+        A premium sanctuary for spiritual seekers. Elevate your intuition with our globally recognized curriculum.
+      </motion.p>
 
       {/* 3. COUNTDOWN TIMER */}
-      <div className="grid grid-cols-4 gap-3 md:gap-8 mb-16 w-full max-w-xl px-2">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="grid grid-cols-4 gap-3 md:gap-6 mb-16 w-full max-w-sm md:max-w-md px-2"
+      >
         {[
           { label: 'Days', value: timeLeft.days },
           { label: 'Hours', value: timeLeft.hours },
@@ -50,28 +59,33 @@ const Hero = () => {
           { label: 'Secs', value: timeLeft.secs },
         ].map((unit, i) => (
           <div key={i} className="flex flex-col items-center">
-            <div className="glass-study-panel w-full aspect-square flex items-center justify-center rounded-xl md:rounded-2xl border-gold-main/20">
-              <span className="font-['Cinzel'] text-xl md:text-4xl font-bold text-gold-bright">
+            <div className="glass-study-panel w-full aspect-square flex items-center justify-center rounded-xl border-gold-main/20 shadow-lg">
+              <span className="font-['Cinzel'] text-xl md:text-3xl font-bold text-gold-bright">
                 {String(unit.value).padStart(2, '0')}
               </span>
             </div>
-            <span className="mt-2 text-[8px] md:text-xs font-['Cinzel'] tracking-widest text-gold-main/60 uppercase font-bold">
+            <span className="mt-2 text-[8px] md:text-[10px] font-['Cinzel'] tracking-widest text-gold-main/60 uppercase font-bold">
               {unit.label}
             </span>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* 4. CALL TO ACTION BUTTONS */}
-      <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
-        <button className="group flex items-center justify-center gap-3 bg-gold-main hover:bg-gold-bright text-black px-10 py-5 rounded-sm font-['Cinzel'] font-black text-xs tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-          ENROLL NOW <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12"
+      >
+        <button className="group flex items-center justify-center gap-3 bg-gold-main hover:bg-gold-bright text-black px-8 py-4 rounded-sm font-['Cinzel'] font-black text-[10px] tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+          ENROLL NOW <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
         </button>
         
-        <button className="flex items-center justify-center gap-3 bg-transparent border border-gold-main/40 hover:border-gold-main text-gold-main px-10 py-5 rounded-sm font-['Cinzel'] font-black text-xs tracking-[0.2em] transition-all backdrop-blur-md">
-          <BookOpen size={16} /> VIEW CURRICULUM
+        <button className="flex items-center justify-center gap-3 bg-transparent border border-gold-main/40 hover:border-gold-main text-gold-main px-8 py-4 rounded-sm font-['Cinzel'] font-black text-[10px] tracking-[0.2em] transition-all backdrop-blur-md hover:bg-gold-main/5">
+          <BookOpen size={14} /> VIEW CURRICULUM
         </button>
-      </div>
+      </motion.div>
 
       {/* 5. SOCIAL PROOF & RATING */}
       <div className="flex flex-col items-center gap-4 mb-24">

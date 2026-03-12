@@ -15,7 +15,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#030005] pb-12 px-6 border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-[#0f0814] pb-12 px-6 border-t border-gold-main/10 overflow-hidden">
 
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-75 bg-gold-main/5 blur-[120px] pointer-events-none" />
@@ -23,10 +23,10 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* LOGO ROW */}
-        <div className="flex justify-center mb-16">
-          <img
-            src={logo}
-            alt="Oracle Horizon"
+        <div className="flex justify-start mb-4">
+            <img
+              src={logo}
+              alt="Oracle Horizon"
             className="
               w-auto
               h-35
@@ -35,13 +35,13 @@ export const Footer = () => {
               lg:h-50
               object-contain
             "
-            style={{ filter: "brightness(0) invert(1)" }}
-          />
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
         </div>
 
         {/* CONTENT GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-
+            
           {/* BRAND / CONTACT */}
           <div className="lg:col-span-4">
             <p className="font-['Cormorant_Garamond'] text-lg text-white/50 leading-relaxed italic mb-8 max-w-sm">

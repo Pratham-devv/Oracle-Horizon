@@ -4,7 +4,7 @@
 @theme {
   --color-gold-bright: #fcf6ba;
   --color-gold-main: #d4af37;
-  --color-obsidian: #050208;
+  --color-obsidian: #0f0814;
 }
 
 /* 3D Flip Mechanics */
@@ -14,7 +14,7 @@
 .rotate-y-180 { transform: rotateY(180deg); }
 
 .glass-study-panel {
-  background: rgba(10, 5, 20, 0.8);
+  background: rgba(15, 8, 20, 0.8);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(212, 175, 55, 0.25);
   box-shadow: 0 0 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(212,175,55,0.05);
@@ -27,6 +27,7 @@
 .shimmer-gold {
   background: linear-gradient(90deg, #aa771c, #fcf6ba, #d4af37);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 5s linear infinite;

@@ -58,7 +58,7 @@ const curriculumData = [
 
 export const Curriculum = () => {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section id="curriculum" className="relative py-24 px-6 overflow-hidden">
       {/* Subtle Section Divider */}
       <div className="max-w-4xl mx-auto h-px bg-gradient-to-r from-transparent via-gold-main/20 to-transparent mb-24" />
 
@@ -66,8 +66,8 @@ export const Curriculum = () => {
         {/* HEADER */}
         <div className="text-center mb-20">
           <span className="font-['Cinzel'] text-gold-main text-[10px] tracking-[0.4em] uppercase font-bold">The Knowledge Path</span>
-          <h2 className="font-['Cinzel'] text-4xl md:text-6xl font-black shimmer-gold uppercase mt-4 mb-6">What You'll Learn</h2>
-          <p className="font-['Cormorant_Garamond'] text-xl text-white/50 italic max-w-2xl mx-auto">
+          <h2 className="font-['Cinzel'] text-3xl md:text-5xl font-black shimmer-gold uppercase mt-4 mb-6">What You'll Learn</h2>
+          <p className="font-['Cormorant_Garamond'] text-lg text-white/50 italic max-w-2xl mx-auto leading-relaxed">
             Comprehensive modules designed to take you from novice to expert tarot reader.
           </p>
         </div>
@@ -84,7 +84,7 @@ export const Curriculum = () => {
               className="group relative"
             >
               {/* THE TRANSLUCENT GLASS CARD */}
-              <div className="relative z-10 h-full p-8 rounded-[35px] border border-white/5 bg-white/[0.03] backdrop-blur-md hover:bg-white/[0.07] transition-all duration-500 hover:border-gold-main/30 overflow-hidden shadow-2xl">
+              <div className="relative z-10 h-full p-8 rounded-[35px] border border-white/5 bg-white/[0.03] backdrop-blur-md hover:bg-white/[0.07] transition-all duration-500 hover:border-gold-main/30 overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
                 
                 {/* Background "Lesson" Counter Decoration */}
                 <div className="absolute -right-6 -bottom-6 text-[100px] font-['Cinzel'] font-black text-gold-main opacity-[0.02] group-hover:opacity-[0.05] transition-opacity pointer-events-none">
@@ -106,7 +106,7 @@ export const Curriculum = () => {
                            {item.lessons}
                          </span>
                       </div>
-                      <h4 className="font-['Cinzel'] text-xl font-bold text-gold-bright tracking-wide group-hover:text-gold-main transition-colors leading-tight">
+                      <h4 className="font-['Cinzel'] text-lg font-bold text-gold-bright tracking-wide group-hover:text-gold-main transition-colors leading-tight">
                         {item.title}
                       </h4>
                     </div>
@@ -129,12 +129,12 @@ export const Curriculum = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-13 text-center"
         >
           <p className="font-['Cinzel'] text-sm tracking-[0.4em] text-gold-main/40 mb-4 uppercase">Academic Total</p>
-          <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-gold-main/40 to-transparent">
-             <div className="px-10 py-4 bg-[#050208] rounded-full">
-                <span className="text-2xl md:text-3xl font-bold text-white tracking-widest font-['Cinzel']">
+          <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-gold-main/40 to-transparent flex-wrap overflow-hidden">
+             <div className="px-5 md:px-10 py-4 bg-black/40 backdrop-blur-md rounded-full">
+                <span className="text-xl md:text-3xl font-bold text-white tracking-widest font-['Cinzel'] whitespace-nowrap">
                    56+ <span className="text-gold-main italic">Total</span> Lessons
                 </span>
              </div>

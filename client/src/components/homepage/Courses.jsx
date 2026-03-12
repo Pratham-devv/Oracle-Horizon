@@ -14,8 +14,32 @@ const courseData = [
     save: "51% OFF",
     thumbnail: null,
     content: [
-      { lang: "English", title: "Basic", desc: "Perfect for beginners starting their tarot journey", features: ["E-book Guide", "20+ Lectures", "Card Meanings", "Spreads", "Community"] },
-      { lang: "Hindi", title: "बुनियादी", desc: "टैरो यात्रा शुरू करने वाले शुरुआती लोगों के लिए बिल्कुल सही", features: ["ई-बुक गाइड", "20+ व्याख्यान", "कार्ड अर्थ", "स्प्रेड", "समुदाय"] }
+      { 
+        lang: "English", title: "Basic", desc: "Perfect for beginners starting their tarot journey", 
+        features: [
+          { text: "E-book Guide", available: true }, 
+          { text: "20+ Lectures", available: true }, 
+          { text: "Card Meanings", available: true }, 
+          { text: "Spreads & Community", available: true },
+          { text: "Advanced Shadow Work", available: false },
+          { text: "Career Practice Sessions", available: false },
+          { text: "Live Zoom Masterclasses", available: false },
+          { text: "Physical Tarot Hamper", available: false }
+        ] 
+      },
+      { 
+        lang: "Hindi", title: "बुनियादी", desc: "टैरो यात्रा शुरू करने वाले शुरुआती लोगों के लिए बिल्कुल सही", 
+        features: [
+          { text: "ई-बुक गाइड", available: true }, 
+          { text: "20+ व्याख्यान", available: true }, 
+          { text: "कार्ड अर्थ", available: true }, 
+          { text: "स्प्रेड और समुदाय", available: true },
+          { text: "उन्नत छाया कार्य", available: false },
+          { text: "कैरियर अभ्यास सत्र", available: false },
+          { text: "लाइव ज़ूम मास्टरक्लास", available: false },
+          { text: "फिजिकल टैरो हैम्पर", available: false }
+        ] 
+      }
     ]
   },
   {
@@ -25,8 +49,30 @@ const courseData = [
     save: "50% OFF",
     thumbnail: standardThumb,
     content: [
-      { lang: "English", title: "Standard", desc: "Ideal for those serious about mastering tarot", features: ["Everything in Basic", "40+ Lectures", "15 Advanced", "Career Sessions", "Certificate"] },
-      { lang: "Hindi", title: "मानक", desc: "टैरो में महारत हासिल करने के प्रति गंभीर लोगों के लिए आदर्श", features: ["बेसिक में सब कुछ", "40+ व्याख्यान", "15 उन्नत", "करियर सत्र", "प्रमाण पत्र"] }
+      { 
+        lang: "English", title: "Standard", desc: "Ideal for those serious about mastering tarot", 
+        features: [
+          { text: "Everything in Basic", available: true }, 
+          { text: "40+ Lectures", available: true }, 
+          { text: "Advanced Shadow Work", available: true }, 
+          { text: "Career Practice Sessions", available: true },
+          { text: "Certificate of Completion", available: true },
+          { text: "Live Zoom Masterclasses", available: false },
+          { text: "Physical Tarot Hamper", available: false }
+        ] 
+      },
+      { 
+        lang: "Hindi", title: "मानक", desc: "टैरो में महारत हासिल करने के प्रति गंभीर लोगों के लिए आदर्श", 
+        features: [
+          { text: "बेसिक में सब कुछ", available: true }, 
+          { text: "40+ व्याख्यान", available: true }, 
+          { text: "उन्नत छाया कार्य", available: true }, 
+          { text: "कैरियर अभ्यास सत्र", available: true },
+          { text: "प्रमाण पत्र", available: true },
+          { text: "लाइव ज़ूम मास्टरक्लास", available: false },
+          { text: "फिजिकल टैरो हैम्पर", available: false }
+        ] 
+      }
     ]
   },
   {
@@ -37,8 +83,26 @@ const courseData = [
     isPopular: true,
     thumbnail: premiumThumb,
     content: [
-      { lang: "English", title: "Premium", desc: "The ultimate tarot mastery experience", features: ["Everything in Standard", "Live Classes", "60+ Lectures", "Premium E-books", "Tarot Hamper"] },
-      { lang: "Hindi", title: "प्रीमियम", desc: "परम टैरो महारत का अनुभव", features: ["स्टैंडर्ड में सब कुछ", "लाइव कक्षाएं", "60+ व्याख्यान", "प्रीमियम ई-बुक्स", "टैरो हैम्पर"] }
+      { 
+        lang: "English", title: "Premium", desc: "The ultimate tarot mastery experience", 
+        features: [
+          { text: "Everything in Standard", available: true }, 
+          { text: "Live Zoom Masterclasses", available: true }, 
+          { text: "60+ Lectures", available: true }, 
+          { text: "Premium E-books", available: true }, 
+          { text: "Physical Tarot Hamper", available: true }
+        ] 
+      },
+      { 
+        lang: "Hindi", title: "प्रीमियम", desc: "परम टैरो महारत का अनुभव", 
+        features: [
+          { text: "स्टैंडर्ड में सब कुछ", available: true }, 
+          { text: "लाइव ज़ूम मास्टरक्लास", available: true }, 
+          { text: "60+ व्याख्यान", available: true }, 
+          { text: "प्रीमियम ई-बुक्स", available: true }, 
+          { text: "फिजिकल टैरो हैम्पर", available: true }
+        ] 
+      }
     ]
   }
 ];
@@ -47,16 +111,11 @@ export const Courses = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => setActiveIndex(prev => (prev === 0 ? 1 : 0)), 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative py-16 md:py-24 px-4 bg-[#050208] text-[#f0e8d0] overflow-hidden">
+    <section id="courses" className="relative  px-4 bg-transparent text-[#f0e8d0] overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-['Cinzel'] font-black shimmer-gold uppercase tracking-tighter">Academic Vaults</h2>
-        <p className="text-gold-main/40 mt-2 tracking-[0.4em] text-[10px] uppercase font-bold italic">Dual-Language Perspectives</p>
+        <h2 className="text-3xl md:text-5xl font-['Cinzel'] font-black shimmer-gold uppercase tracking-tighter">Academic Vaults</h2>
+        <p className="text-gold-main/40 mt-3 tracking-[0.4em] text-[10px] md:text-[11px] uppercase font-bold italic">Dual-Language Perspectives</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-10 max-w-7xl mx-auto items-start">
@@ -94,15 +153,26 @@ export const Courses = () => {
                       willChange: 'transform, opacity',
                       backfaceVisibility: 'hidden'
                     }}
-                    className={`absolute inset-0 p-6 md:p-8 rounded-[35px] border flex flex-col justify-between 
-                      ${vault.isPopular ? 'border-gold-main/50' : 'border-gold-main/20'} 
+                    className={`absolute inset-0 p-6 md:p-8 rounded-[35px] border flex flex-col justify-between transition-all duration-300
+                      ${vault.isPopular ? 'border-gold-main/50 hover:border-gold-main/70 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)]' : 'border-gold-main/20 hover:border-gold-main/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]'} 
                       bg-[#0a0a0c] backdrop-blur-2xl shadow-2xl overflow-hidden`}
                   >
                     <div className="relative z-10 h-full flex flex-col">
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-[8px] md:text-[10px] font-bold text-gold-main tracking-widest uppercase border border-gold-main/20 px-2 py-0.5 rounded">
-                          {card.lang}
-                        </span>
+                        <div className="flex gap-2">
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setActiveIndex(0); }}
+                            className={`text-[8px] md:text-[10px] font-bold tracking-widest uppercase border px-2 py-0.5 rounded transition-colors ${activeIndex === 0 ? 'border-gold-main text-gold-main bg-gold-main/10' : 'border-gold-main/20 text-gold-main/40 hover:text-gold-main hover:border-gold-main/50'}`}
+                          >
+                            English
+                          </button>
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setActiveIndex(1); }}
+                            className={`text-[8px] md:text-[10px] font-bold tracking-widest uppercase border px-2 py-0.5 rounded transition-colors ${activeIndex === 1 ? 'border-gold-main text-gold-main bg-gold-main/10' : 'border-gold-main/20 text-gold-main/40 hover:text-gold-main hover:border-gold-main/50'}`}
+                          >
+                            Hindi
+                          </button>
+                        </div>
                         <Sparkles size={14} className="text-gold-main/40" />
                       </div>
 
@@ -140,9 +210,13 @@ export const Courses = () => {
 
                       <div className="space-y-2 flex-grow">
                         {card.features.map((f, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5 text-[10px] md:text-[11px] text-white/50 leading-tight">
-                            <Check size={12} className="text-gold-main shrink-0 mt-0.5" />
-                            <span className="line-clamp-1">{f}</span>
+                          <div key={idx} className={`flex items-start gap-2.5 text-[10px] md:text-[11px] leading-tight ${f.available ? 'text-white/70' : 'text-white/20'}`}>
+                            {f.available ? (
+                              <Check size={12} className="text-gold-main shrink-0 mt-0.5" />
+                            ) : (
+                              <X size={12} className="text-white/20 shrink-0 mt-0.5" />
+                            )}
+                            <span className="line-clamp-1">{f.text}</span>
                           </div>
                         ))}
                       </div>

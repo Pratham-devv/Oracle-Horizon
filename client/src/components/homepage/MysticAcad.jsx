@@ -38,7 +38,7 @@ export default function MysticAcademy() {
                   alt="The High Priestess"
                 />
 
-                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+                <div className="absolute inset-0  from-black via-transparent to-transparent" />
 
                 <div className="absolute bottom-6 left-6 right-6 text-center">
                   <h3 className="font-['Cinzel'] text-3xl font-bold text-gold-bright drop-shadow-lg">

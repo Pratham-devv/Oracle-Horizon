@@ -21,7 +21,7 @@ export function Starfield() {
     };
 
     const draw = () => {
-      ctx.fillStyle = "#050208";
+      ctx.fillStyle = "#0f0814";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       stars.forEach(s => {
