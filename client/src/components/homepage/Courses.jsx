@@ -5,14 +5,14 @@ import { Check, Crown, Sparkles, X, Gift } from 'lucide-react';
 // Assets
 import standardThumb from '../../assets/Standard.png';
 import premiumThumb from '../../assets/Premium.png';
-
+import basicThumb from '../../assets/Basic.png';
 const courseData = [
   {
     id: 'basic',
     price: 49,
     oldPrice: 99,
     save: "51% OFF",
-    thumbnail: null,
+    thumbnail: basicThumb,
     content: [
       { 
         lang: "English", title: "Basic", desc: "Perfect for beginners starting their tarot journey", 

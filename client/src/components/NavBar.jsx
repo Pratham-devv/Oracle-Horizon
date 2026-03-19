@@ -73,7 +73,7 @@ const NavBar = () => {
          <a href="#courses" className="hover:text-gold-main transition-colors">Courses</a>
          <a href="#curriculum" className="hover:text-gold-main transition-colors">CURRICULUM</a>
          <a href="#instructors" className="hover:text-gold-main transition-colors">Instructors</a>
-         <a href="#" className="hover:text-gold-main transition-colors">Testimonials</a>
+         <a href="#testimonials" className="hover:text-gold-main transition-colors">Testimonials</a>
         </div>
         
         <div className="hidden md:flex bg-gold-main/10 border border-gold-main/30 px-4 py-2 rounded-full items-center gap-2 hover:bg-gold-main/20 transition-colors cursor-pointer">
@@ -110,7 +110,7 @@ const NavBar = () => {
               <a href="#courses" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gold-main transition-colors uppercase">Courses</a>
               <a href="#curriculum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gold-main transition-colors uppercase">Curriculum</a>
               <a href="#instructors" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gold-main transition-colors uppercase">Instructors</a>
-              <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gold-main transition-colors uppercase">Testimonials</a>
+              <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gold-main transition-colors uppercase">Testimonials</a>
               
               <div className="mt-8 bg-gold-main text-black px-8 py-4 rounded-full flex items-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(212,175,55,0.4)]">
                  <GraduationCap size={20} />

@@ -8,12 +8,17 @@ import {
   Twitter,
   Youtube,
   ArrowUpRight,
+  Sparkles,
 } from "lucide-react";
 import logo from "../assets/Logo.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-
+  const icon = (
+    <span className="ml-2 inline-flex items-center text-gold-bright animate-bounce">
+      <span className="text-xs font-bold text-gold-main golden-shimmer">Hiring!</span><Sparkles size={14} />
+    </span>
+  );
   return (
     <footer className="relative bg-[#0f0814] pb-12 px-6 border-t border-gold-main/10 overflow-hidden">
 
@@ -52,8 +57,8 @@ export const Footer = () => {
             <div className="space-y-4 pt-6 border-t border-white/5">
               <ContactLink
                 icon={<Mail size={16} />}
-                text="contact@oraclehorizon.com"
-                href="mailto:contact@oraclehorizon.com"
+                text="Oraclehorizon12@gmail.com"
+                href="mailto:Oraclehorizon12@gmail.com"
               />
 
               <ContactLink
@@ -64,7 +69,7 @@ export const Footer = () => {
 
               <ContactLink
                 icon={<MapPin size={16} />}
-                text="New York, NY 10001"
+                text="B-4 / 132 Pachim Vihar, New Delhi"
               />
             </div>
           </div>
@@ -74,24 +79,25 @@ export const Footer = () => {
 
             {/* COURSES */}
             <FooterSection title="Courses">
-              <FooterLink text="Basic Course" />
-              <FooterLink text="Standard Course" />
-              <FooterLink text="Premium Course" />
+              <FooterLink text="Basic Course" href="#courses" />
+              <FooterLink text="Standard Course" href="#courses" />
+              <FooterLink text="Premium Course" href="#courses" />
             </FooterSection>
 
             {/* RESOURCES */}
             <FooterSection title="Resources">
-              <FooterLink text="Free E-book Sample" />
-              <FooterLink text="Blog" />
-              <FooterLink text="FAQ" />
+              <FooterLink text="Free E-book Sample" href="#hero" />
+              <FooterLink text="Blog" href="#blog" />
+              <FooterLink text="FAQ" href="#faq" />
             </FooterSection>
 
             {/* COMPANY */}
             <FooterSection title="Company">
-              <FooterLink text="About Us" />
-              <FooterLink text="Contact" />
-              <FooterLink text="Privacy Policy" />
-              <FooterLink text="Terms of Service" />
+              <FooterLink text={<span className="flex items-center">We are Hiring {icon}</span>} href="#hiring" />
+              <FooterLink text="About Us" href="#about" />
+              <FooterLink text="Contact" href="mailto:Oraclehorizon12@gmail.com" />
+              <FooterLink text="Privacy Policy" href="#privacy" />
+              <FooterLink text="Terms of Service" href="#terms" />
             </FooterSection>
 
             {/* SOCIAL */}
@@ -101,10 +107,10 @@ export const Footer = () => {
               </h4>
 
               <div className="flex flex-wrap gap-3">
-                <SocialIcon icon={<Instagram size={18} />} />
-                <SocialIcon icon={<Twitter size={18} />} />
-                <SocialIcon icon={<Youtube size={18} />} />
-                <SocialIcon icon={<Facebook size={18} />} />
+                <SocialIcon icon={<Instagram size={18} />} href="https://instagram.com" />
+                <SocialIcon icon={<Twitter size={18} />} href="https://twitter.com" />
+                <SocialIcon icon={<Youtube size={18} />} href="https://youtube.com" />
+                <SocialIcon icon={<Facebook size={18} />} href="https://facebook.com" />
               </div>
             </div>
 
@@ -141,10 +147,10 @@ const FooterSection = ({ title, children }) => (
   </div>
 );
 
-const FooterLink = ({ text }) => (
+const FooterLink = ({ text, href }) => (
   <li>
     <a
-      href="#"
+      href={href || "#"}
       className="group flex items-center gap-2 text-[13px] text-white/40 hover:text-gold-main transition-colors font-['Manrope']"
     >
       <span>{text}</span>
@@ -168,9 +174,11 @@ const ContactLink = ({ icon, text, href }) => (
   </a>
 );
 
-const SocialIcon = ({ icon }) => (
+const SocialIcon = ({ icon, href }) => (
   <a
-    href="#"
+    href={href || "#"}
+    target="_blank"
+    rel="noopener noreferrer"
     className="p-2 rounded-lg border border-white/5 bg-white/2 text-white/40 hover:text-gold-main hover:border-gold-main/40 transition-all"
   >
     {icon}

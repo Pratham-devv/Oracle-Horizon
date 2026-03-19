@@ -71,7 +71,8 @@ export const Instructor = () => {
     {[
       "Certified Tarot Grand Master - Order of Divination",
       "Spiritual Healing Practitioner",
-      "Published Author & Esoteric Researcher"
+      "Published Author & Esoteric Researcher",
+      "Certified Crystal Healer"
     ].map((credential, idx) => (
       <motion.li 
         variants={{
@@ -110,10 +111,11 @@ export const Instructor = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8 mt-12">
               {[
-                { icon: <History size={18} />, title: "30+ Years", label: "Deep Esoteric Study" },
+                { icon: <History size={18} />, title: "10+ Years", label: "Deep Esoteric Study" },
                 { icon: <GraduationCap size={18} />, title: "15k+ Students", label: "Certified Worldwide" },
                 { icon: <Award size={18} />, title: "Grand Master", label: "Order of Divination" },
                 { icon: <Stars size={18} />, title: "Clairvoyant", label: "Intuitive Specialist" }
+                
               ].map((stat, i) => (
                 <motion.div
                   key={i}
